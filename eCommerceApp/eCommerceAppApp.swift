@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct eCommerceAppApp: App {
+    var orderObj = Order()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AppTabView().environmentObject(orderObj)
         }
     }
 }
