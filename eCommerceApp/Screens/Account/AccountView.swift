@@ -43,7 +43,9 @@ struct AccountView: View {
                         .textInputAutocapitalization(.none)
                         .disableAutocorrection(true)
                     
-                    DatePicker("Birthday", selection: $vm.user.birthDay, displayedComponents: .date)
+                    DatePicker("Birthday", selection: $vm.user.birthDay,
+                               in: Date().oneHundredTenYearsAgo...Date().eighteenYearsAgo,
+                               displayedComponents: .date)
                     
                     Button(action: {
                         vm.saveChanges()
